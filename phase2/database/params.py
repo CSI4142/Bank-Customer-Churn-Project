@@ -4,6 +4,8 @@ class params:
   fresh_start = True,
   # if true, will drop all tables
   reset = False
+  # database name
+  db_name = "bank_customer_churn"
   # base path to the CSV files
   data_dir = "phase2/data/"
   tmp_dir = "/tmp/"
