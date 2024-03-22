@@ -1,15 +1,15 @@
-import sys
-# from phase2.database.scripts.banking_profile_dim import create_banking_profile_dim_table, drop_banking_profile_dim_table, add_banking_profile_dim_data
-
-# sys.path.append('./scripts')
-
-from scripts.banking_profile_dim import create_banking_profile_dim_table, drop_banking_profile_dim_table, add_banking_profile_dim_data
+from scripts.banking_profile_dim import BankingProfileDim
+from scripts.location_dim import LocationDim
+from scripts.customer_profile_dim import CustomerProfileDim
+from utils import copy_dim_files_to_tmp
 
 def create_tables(conn):
     """ Create a table in the PostgreSQL database """
     print("Creating tables")
     commands = [
-        create_banking_profile_dim_table
+        BankingProfileDim.create_table,
+        LocationDim.create_table,
+        CustomerProfileDim.create_table
     ]
     # create a cursor
     cur = conn.cursor()
@@ -26,7 +26,9 @@ def drop_tables(conn):
     """ Drop a table in the PostgreSQL database """
     print("Dropping tables")
     commands = [
-        drop_banking_profile_dim_table
+        BankingProfileDim.drop_table,
+        LocationDim.drop_table,
+        CustomerProfileDim.drop_table
     ]
     # create a cursor
     cur = conn.cursor()
@@ -42,8 +44,13 @@ def drop_tables(conn):
 def add_data(conn):
     """ Add data to the PostgreSQL database """
     print("Adding data")
+    # before we can add data, we need to copy the dimension 
+    # files to the temporary directory for them to be accessible
+    copy_dim_files_to_tmp()
     commands = [
-        add_banking_profile_dim_data
+        BankingProfileDim.add_data,
+        LocationDim.add_data,
+        CustomerProfileDim.add_data
     ]
     # create a cursor
     cur = conn.cursor()

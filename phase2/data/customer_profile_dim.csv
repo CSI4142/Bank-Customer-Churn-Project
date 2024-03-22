@@ -1,4 +1,4 @@
-CustomerId,Surname,Gender,Age,EstimatedSalary
+customer_id,surname,gender,age,estimated_salary
 15634602,Hargrave,Female,42,101348.88
 15647311,Hill,Female,41,112542.58
 15619304,Onio,Female,42,113931.57

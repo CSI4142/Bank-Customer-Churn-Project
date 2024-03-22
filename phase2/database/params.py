@@ -5,5 +5,8 @@ class params:
   # if true, will drop all tables
   reset = False
   # base path to the CSV files
-  csv_dir = "/tmp/"
+  data_dir = "phase2/data/"
+  tmp_dir = "/tmp/"
   banking_profile_dim_csv = "banking_profile_dim.csv"
+  location_dim_csv = "location_dimension_table.csv"
+  customer_profile_dim_csv = "customer_profile_dim.csv"
