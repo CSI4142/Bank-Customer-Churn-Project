@@ -1,6 +1,7 @@
 from scripts.banking_profile_dim import BankingProfileDim
 from scripts.location_dim import LocationDim
 from scripts.customer_profile_dim import CustomerProfileDim
+from scripts.churn_fact_table import ChurnFactTable
 from params import params
 from utils import copy_dim_files_to_tmp
 
@@ -50,7 +51,8 @@ class Commands:
         commands = [
             BankingProfileDim.create_table,
             LocationDim.create_table,
-            CustomerProfileDim.create_table
+            CustomerProfileDim.create_table,
+            ChurnFactTable.create_table
         ]
         # create a cursor
         cur = conn.cursor()
@@ -67,6 +69,7 @@ class Commands:
         """ Drop a table in the PostgreSQL database """
         print("Dropping tables")
         commands = [
+            ChurnFactTable.drop_table,
             BankingProfileDim.drop_table,
             LocationDim.drop_table,
             CustomerProfileDim.drop_table
@@ -91,7 +94,8 @@ class Commands:
         commands = [
             BankingProfileDim.add_data,
             LocationDim.add_data,
-            CustomerProfileDim.add_data
+            CustomerProfileDim.add_data,
+            ChurnFactTable.add_data
         ]
         # create a cursor
         cur = conn.cursor()
