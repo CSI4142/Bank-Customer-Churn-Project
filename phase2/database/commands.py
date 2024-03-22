@@ -1,4 +1,9 @@
-from banking_profile_dim import create_banking_profile_dim_table, drop_banking_profile_dim_table, add_banking_profile_dim_data
+import sys
+# from phase2.database.scripts.banking_profile_dim import create_banking_profile_dim_table, drop_banking_profile_dim_table, add_banking_profile_dim_data
+
+# sys.path.append('./scripts')
+
+from scripts.banking_profile_dim import create_banking_profile_dim_table, drop_banking_profile_dim_table, add_banking_profile_dim_data
 
 def create_tables(conn):
     """ Create a table in the PostgreSQL database """
@@ -37,7 +42,6 @@ def drop_tables(conn):
 def add_data(conn):
     """ Add data to the PostgreSQL database """
     print("Adding data")
-    print(add_banking_profile_dim_data)
     commands = [
         add_banking_profile_dim_data
     ]
