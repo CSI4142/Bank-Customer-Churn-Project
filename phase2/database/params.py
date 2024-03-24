@@ -12,3 +12,4 @@ class params:
   banking_profile_dim_csv = "banking_profile_dim.csv"
   location_dim_csv = "location_dimension_table.csv"
   customer_profile_dim_csv = "customer_profile_dim.csv"
+  credit_profile_dim_csv = "credit_profile_dim.csv"

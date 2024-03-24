@@ -7,7 +7,8 @@ def copy_dim_files_to_tmp():
     files_to_copy = [
         params.banking_profile_dim_csv,
         params.location_dim_csv,
-        params.customer_profile_dim_csv
+        params.customer_profile_dim_csv,
+        params.credit_profile_dim_csv
     ]
     # source directory
     source_dir = params.data_dir
