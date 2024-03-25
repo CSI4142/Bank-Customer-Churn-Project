@@ -1,6 +1,7 @@
 from scripts.banking_profile_dim import BankingProfileDim
 from scripts.location_dim import LocationDim
 from scripts.customer_profile_dim import CustomerProfileDim
+from scripts.credit_profile_dim import CreditProfileDim
 from scripts.churn_fact_table import ChurnFactTable
 from params import params
 from utils import copy_dim_files_to_tmp
@@ -52,6 +53,7 @@ class Commands:
             BankingProfileDim.create_table,
             LocationDim.create_table,
             CustomerProfileDim.create_table,
+            CreditProfileDim.create_table,
             ChurnFactTable.create_table
         ]
         # create a cursor
@@ -72,7 +74,8 @@ class Commands:
             ChurnFactTable.drop_table,
             BankingProfileDim.drop_table,
             LocationDim.drop_table,
-            CustomerProfileDim.drop_table
+            CustomerProfileDim.drop_table,
+            CreditProfileDim.drop_table
         ]
         # create a cursor
         cur = conn.cursor()
@@ -95,6 +98,7 @@ class Commands:
             BankingProfileDim.add_data,
             LocationDim.add_data,
             CustomerProfileDim.add_data,
+            CreditProfileDim.add_data,
             ChurnFactTable.add_data
         ]
         # create a cursor

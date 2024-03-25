@@ -12,6 +12,7 @@ class params:
   banking_profile_dim_csv = "banking_profile_dim.csv"
   location_dim_csv = "location_dim.csv"
   customer_profile_dim_csv = "customer_profile_dim.csv"
+  credit_profile_dim_csv = "credit_profile_dim.csv"
   churn_fact_table_csv = "churn_fact_table.csv"
   # files to copy to the temporary directory
   # required for staging data to PostgreSQL
