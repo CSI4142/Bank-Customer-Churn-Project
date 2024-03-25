@@ -20,5 +20,6 @@ class params:
     banking_profile_dim_csv,
     location_dim_csv,
     customer_profile_dim_csv,
+    credit_profile_dim_csv,
     churn_fact_table_csv
   ]

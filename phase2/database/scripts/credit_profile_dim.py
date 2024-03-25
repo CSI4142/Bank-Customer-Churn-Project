@@ -9,7 +9,7 @@ class CreditProfileDim:
     credit_profile_key SERIAL PRIMARY KEY,
     credit_card_ownership SMALLINT NOT NULL,
     credit_score FLOAT NOT NULL,
-    credit_card_type VARCHAR(10) NOT NULL,);"""
+    credit_card_type VARCHAR(10) NOT NULL);"""
     
     # SQL command to drop customer profile dimension table
     drop_table = f"""DROP TABLE IF EXISTS {table_name};"""
