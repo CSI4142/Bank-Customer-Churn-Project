@@ -18,6 +18,9 @@ class ChurnFactTable:
             FOREIGN KEY (bank_profile_key) 
             REFERENCES banking_profile_dim (bank_profile_key)
             ON UPDATE CASCADE ON DELETE NO ACTION,
+            FOREIGN KEY (credit_profile_key) 
+            REFERENCES credit_profile_dim (credit_profile_key)
+            ON UPDATE CASCADE ON DELETE NO ACTION,
             FOREIGN KEY (location_key) 
             REFERENCES location_dim (location_key) 
             ON UPDATE CASCADE ON DELETE NO ACTION);"""
